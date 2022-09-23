@@ -17,15 +17,21 @@ class ArticulosController extends Controller{
         }
     }
 
-    public function ArticulosID(Request $request)
+    public function consultarArticulos(Request $request)
     {
-        $id = $request->input('id');
-        $consultaID = \DB::select("SELECT * FROM articulos WHERE id='".$id."'");
 
-        if (count($consultaID) > 0) {
-            return response()->json(array("status" => true, "resultado" => $consultaID));
+        $this->validate($request, [
+            'descripcion' => 'required|string'
+        ], [
+            'descripcion.required' => 'Campo descripcion es requerido'
+        ]);
+
+        $buscar = \DB::select("SELECT * FROM  articulos WHERE descripcion LIKE '%".$request->descripcion."%'");
+
+        if (!empty($buscar)) {
+            return response()->json(['status' => true, 'datos' => $buscar]);            
         }else{
-            return response()->json(array("status" => false, "mensaje" => "El dato no de encuentra"));
+            return response()->json(['status' => false, 'message' => "Datos no encontrados o no existen"]);
         }
 
     }

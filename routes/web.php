@@ -19,7 +19,7 @@ $router->post('/login', [ 'as' => '/login', 'uses' => 'UserController@login']);
 $router->group(['middleware' => 'auth'], function () use ($router) {
 
     $router->get('/articulos', [ 'as' => 'articulos', 'uses' => 'ArticulosController@TodosArticulos']);
-    $router->get('/consulta/articulos', [ 'as' => 'consulta/articulos', 'uses' => 'ArticulosController@ArticulosID']);
+    $router->get('/consulta/articulos', [ 'as' => 'consulta/articulos', 'uses' => 'ArticulosController@consultarArticulos']);
     $router->post('/guardar/articulos', [ 'as' => 'guardar/articulos', 'uses' => 'ArticulosController@saveArticulos']); 
 
     $router->post('/logout', [ 'as' => '/logout', 'uses' => 'UserController@logout']);
