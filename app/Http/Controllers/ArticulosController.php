@@ -84,8 +84,14 @@ class ArticulosController extends Controller{
             'id.required' => 'EL id es requerido para eliminar'
         ]);
 
-        $delete = \DB::delete("DELETE FROM articulos WHERE id = '". $request->id ."'");
-        return response()->json(array('status' => true, "message" => "El articulo fue eliminado."));
+        $validacion = \DB::select("SELECT id FROM articulos WHERE id = '".$request->id."'");
+
+        if (!empty($validacion)) {
+            $delete = \DB::delete("DELETE FROM articulos WHERE id = '". $request->id ."'");
+            return response()->json(array('status' => true, "message" => "El articulo fue eliminado."));
+        }else{
+            return response()->json(['status' => false, "message" => "El articulo que intenta eliminar no existe."]);
+        }
 
     }
 
