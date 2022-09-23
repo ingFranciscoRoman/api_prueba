@@ -27,7 +27,7 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->put('/actualizarDatos', ['as' => '/actualizarDatos', 'uses' => 'ArticulosController@actualizarDatos']);
     $router->delete('/eliminarArticulo', ['as' => '/eliminarArticulo', 'uses' => 'ArticulosController@eliminarArticulo']);
 
-    $router->get('user', function () use ($router){
+    $router->get('/user', function () use ($router){
         return auth()->user();
     });
     
