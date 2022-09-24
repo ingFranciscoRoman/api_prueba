@@ -66,6 +66,12 @@ class ArticulosController extends Controller{
         ], [
             'id.required' => 'EL id es requerido'
         ]);
+
+        $this->validate($request, [
+            'cod_producto' => 'required|string'
+        ], [
+            'cod_producto.required' => 'EL cod_producto es requerido'
+        ]);
         
         $update = \DB::select("UPDATE articulos SET cod_producto = '".$request->cod_producto."', descripcion='".$request->descripcion."', precio='".$request->precio."', stock='".$request->stock."' WHERE id = '". $request->id ."'");
 
