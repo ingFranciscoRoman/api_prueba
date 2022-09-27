@@ -30,6 +30,7 @@ class UserController extends Controller{
             return response()->json([
                 'res' => true,
                 'token' => $user->api_token, 
+                'rol_usuario' => $user->id_user_r,
                 'message' => 'Bienvenido al sistema.'
             ]); 
         }else{
