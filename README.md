@@ -1,6 +1,9 @@
 ## PAUTAS PARA EL API
 
-una clonada el proyecto agregue el .env
+Este proyecto fue creado para poner en practica los conociminetos adquiridos en la creación de un API, este proyecto fue desarrollado con LUMEN. A continuación unas sugerencias al momento de querer utilizar el api; Una vez clonado el proyecto en tu pc, es necesario que crees el siguiente archivo en la raiz del api:
+````
+.env
+````
 
 ## PARA INICIAR 
 
