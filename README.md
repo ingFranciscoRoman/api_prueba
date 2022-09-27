@@ -1,6 +1,6 @@
 ## PAUTAS PARA EL API
 
-Este proyecto fue creado para poner en practica los conociminetos adquiridos en la creación de un API, este proyecto fue desarrollado con LUMEN. A continuación unas sugerencias al momento de querer utilizar el api; Una vez clonado el proyecto en tu pc, es necesario que crees el siguiente archivo en la raiz del api:
+Este proyecto fue creado con el fin de poner en práctica los conocimientos adquiridos en la creación de un API, este fue desarrollado con el framework LUMEN. A continuación, agrego unas sugerencias al momento de querer utilizar el api; Una vez clonado el proyecto en tu pc, es necesario que crees el siguiente archivo en la raíz del api:
 ````
 .env
 ````
